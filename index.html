@@ -996,7 +996,7 @@
     }
 
     .footer-brand img {
-      width: 50px;
+      width: 150px;
     }
 
     .footer-brand span {
@@ -2263,6 +2263,60 @@
         padding-top: calc(96px + env(safe-area-inset-top));
       }
     }
+    :root {
+      --eyebrow-heading-gap: 20px;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: var(--eyebrow-heading-gap);
+    }
+
+    .gallery-head h2,
+    .arsenal-head h2,
+    .values-head h2,
+    .vision-text h2,
+    .footer-cta h2 {
+      margin-top: var(--eyebrow-heading-gap);
+    }
+
+    .scroll-cue {
+      gap: 0;
+    }
+
+    .scroll-cue .line {
+      width: 20px;
+      height: 32px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .scroll-cue .line::after {
+      width: 3px;
+      height: 6px;
+      top: 6px;
+      left: 50%;
+      border-radius: 999px;
+      transform: translateX(-50%);
+      animation: scroll-wheel 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scroll-wheel {
+      0%, 100% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 1;
+        transform: translate(-50%, 13px);
+      }
+    }
   </style>
 </head>
 
@@ -2303,7 +2357,7 @@
           <p class="hero-sub">Not just for the gym. We build dependable strength equipment for people who want to keep
             doing the things they love - for decades, not just this season.</p>
         </div>
-        <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+        <div aria-hidden="true" class="scroll-cue"><span class="line"></span></div>
       </div>
     </div>
     <!-- ============ IN MOTION GALLERY ============ -->
@@ -2573,7 +2627,7 @@
       <div class="wrap footer-grid">
         <div class="fcol">
           <div class="footer-brand"><img alt="Utopia Fitness"
-              src="./assets/images/footer-brand.png" />
+              src="./assets/images/logo-file.png" />
           </div>
           <p style="max-width:280px; opacity:.6;">Dependable strength equipment for people who want to keep doing the
             things they love.</p>
